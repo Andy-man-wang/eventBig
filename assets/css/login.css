@@ -1,0 +1,54 @@
+html,body {
+    margin: 0;
+    padding: 0;
+    background: url(../images/login_bg.jpg) no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+}
+.logo{
+    margin-top: 20px;
+}
+.loginAndRegBox {
+    width: 400px;
+    height:310px ;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 10px 50px;
+}
+.title-box {
+    width: 100%;
+    height: 50px;
+   background: url(../images/login_title.png) no-repeat center;  
+}
+.login {
+    display: flex;
+    justify-content: right;
+}
+.reg-box{
+    display: none;
+}
+#form_login div {
+    position: relative;
+}
+#form_reg div {
+    position: relative;
+}
+#form_login div i{
+position: absolute;
+top: 10px;
+left: 10px;
+}
+#form_login div input {
+    padding: 0 30px;
+}
+#form_reg div input {
+    padding: 0 30px;
+}
+#form_reg div i{
+position: absolute;
+top: 10px;
+left: 10px;
+}
