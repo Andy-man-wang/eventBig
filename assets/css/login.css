@@ -5,7 +5,7 @@ html,body {
     background-size: cover;
     box-sizing: border-box;
 }
-.logo{
+.logo img{
     margin-top: 20px;
 }
 .loginAndRegBox {
@@ -23,9 +23,12 @@ html,body {
     height: 50px;
    background: url(../images/login_title.png) no-repeat center;  
 }
-.login {
+/* .login {
     display: flex;
     justify-content: right;
+} */
+.login a {
+    float: right;
 }
 .reg-box{
     display: none;
