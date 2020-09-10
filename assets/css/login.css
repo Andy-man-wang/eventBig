@@ -17,6 +17,7 @@ html,body {
     left: 50%;
     transform: translate(-50%,-50%);
     padding: 10px 50px;
+    box-sizing: border-box;
 }
 .title-box {
     width: 100%;
