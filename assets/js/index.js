@@ -31,6 +31,7 @@ function getUserInfo() {
                 return layer.msg(res.message);
             }
             renderAvatar(res.data)
+            console.log(res);
         },
         // complete: function (res) {
         //     // console.log(res);
