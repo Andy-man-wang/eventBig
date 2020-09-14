@@ -59,6 +59,7 @@
         </tbody>
       </table>
       <!-- 分页区域 -->
+      <div id="pageBox"></div>
     </div>
   </div>
   <script type="text/html" id="tpl-table">
@@ -70,7 +71,7 @@
       <td>{{$value.state}}</td>
       <td>
         <button type="button" data-id="{{$value.Id}}" class="layui-btn layui-btn-xs btn-edit">编辑</button>
-        <button type="button" data-id="{{$value.Id}}" class="layui-btn layui-btn-xs layui-btn-danger btn-delet">删除</button>
+        <button type="button" data-id="{{$value.Id}}" class="layui-btn layui-btn-xs layui-btn-danger btn-delete" >删除</button>
       </td>
     </tr>
     {{/each}}
@@ -86,6 +87,7 @@
   <script src="../assets/lib/jquery.js"></script>
   <script src="../assets/js/baseAPI.js"></script>
   <script src="../assets/lib/template-web.js"></script>
+  <script src="../assets/lib/dayjs.min.js"></script>
   <script src="../assets/js/article/art_list.js"></script>
 </body>
 
