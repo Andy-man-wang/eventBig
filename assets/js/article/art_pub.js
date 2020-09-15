@@ -45,4 +45,52 @@ $(function () {
    .attr('src', newImgURL)  // 重新设置图片路径
    .cropper(options)        // 重新初始化裁剪区域
   })
+
+
+  var art_state = '已发布'
+  $('#btnSave2').click(function(){
+    art_state="存为草稿"
+  })
+
+// 点击表单提交，提交或存为草稿，提交表单
+$('#form-pub').on('submit',function(e){
+  e.preventDefault()
+
+  var fd = new FormData($(this)[0])
+  
+  fd.append('state', art_state);
+  // console.log(fd);
+  // 获取裁剪图像的属性
+  $image
+  .cropper('getCroppedCanvas', { // 创建一个 Canvas 画布
+    width: 400,
+    height: 280
+  })
+  .toBlob(function(blob) {       // 将 Canvas 画布上的内容，转化为文件对象
+    // 得到文件对象后，进行后续的操作
+    fd.append('cover_img', blob);
+    publishArticle(fd)
+  })
+   
+ 
+})
+
+function publishArticle(fd){
+    // 将fd获取的内容发送给服务器
+    $.ajax({
+
+      url:'/my/article/add',
+      type:'post',
+      data:fd,
+      contentType: false,
+      processData: false,
+      success:function(res){
+      if (res.status!==0){
+        return layer.msg(res.message)
+      }
+      layer.msg(res.message)
+      location.href = '/article/art_list.html'
+      }
+    })
+}
 })

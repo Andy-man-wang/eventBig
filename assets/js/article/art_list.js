@@ -97,7 +97,7 @@ $('body').on('click','.btn-delete',function(){
       type:'get',
       
       success:function(res){
-        if(status=== 0){
+        if(res.status!== 0){
           return layer.msg('删除失败');
         }
         layer.msg("删除成功")
@@ -106,10 +106,12 @@ $('body').on('click','.btn-delete',function(){
         p.pagenum=p.pagenum===1 ? 1 : p.pagenum-1
       }
       initTable()
+      layer.close(index);
       }
+     
     })
     
-    layer.close(index);
+   
   });
 })
 
